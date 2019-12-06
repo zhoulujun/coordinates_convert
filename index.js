@@ -22,7 +22,6 @@ function verifyCoordinatesLegitimate (param) {
     if (!param) {
         return false
     }
-    debugger
     let paramIsObject = typeof param === 'object'
     let coordinatesStr = paramIsObject ? JSON.stringify(param) : param
     let purity = true
