@@ -1,0 +1,11 @@
+{
+  "name": "coordinates_convert",
+  "version": "1.0.0",
+  "description": "A utility library for helping convert coordinates from string like GeoJSON Array.Use Reg expression",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhoulujun.cn",
+  "license": "ISC"
+}
