@@ -1,11 +1,17 @@
 {
   "name": "coordinates_convert",
   "version": "1.0.0",
+  "keywords": ["coordinates", "convert", "transform"],
   "description": "A utility library for helping convert coordinates from string like GeoJSON Array.Use Reg expression",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "zhoulujun.cn",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhoulujun/coordinates_convert"
+  },
+  "homepage": "https://github.com/zhoulujun/coordinates_convert#readme"
 }
