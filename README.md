@@ -74,3 +74,51 @@ console.log(m4)
 console.log(m5)
 console.log(m6)
 ```
+## 为什么经纬度默认取6位
+
+| 赤道周长（米）|	度数（度）|
+|  ----  | ----  |
+40076000 | 360
+111322.2222 | 1
+11132.22222 | 0.1
+1113.222222 | 0.01
+111.3222222 | .0001
+11.13222222 | .00001
+1.113222222 | .000001
+0.111322222 | .0000001
+0.011132222 | .00000001
+
++ 首先参考一个标准：维度是平行的，相邻的1度距离约等于111km。
++ 经纬度相差0.000001度时候，距离相差位0.111米
+
+对于在线地图，经纬度的读数，精确到小数点之后第六位，已经足够当前gps精度下的使用。
+## 经纬度不是坐标数组，怎么转换
+那就先转换为GeoJSON咯，传送门：https://www.npmjs.com/package/geojson
+```javascript
+var data = [
+  { name: 'Location A', category: 'Store', street: 'Market', lat: 39.984, lng: -75.343 },
+  { name: 'Location B', category: 'House', street: 'Broad', lat: 39.284, lng: -75.833 },
+  { name: 'Location C', category: 'Office', street: 'South', lat: 39.123, lng: -74.534 }
+];
+GeoJSON.parse(data, {Point: ['lat', 'lng'], include: ['name']});
+```
+转换结果
+```json
+{
+  "type": "FeatureCollection",
+  "features": [
+    { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [-75.343, 39.984]},
+      "properties": {
+        "name": "Location A"
+      }
+    },
+    { "type": "Feature",
+      "geometry": {"type": "Point", "coordinates": [ -75.534, 39.123]},
+      "properties": {
+        "name": "Location C"
+      }
+    }
+  ]
+}
+```

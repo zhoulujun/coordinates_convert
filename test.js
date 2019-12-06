@@ -1,5 +1,16 @@
-let {convertCoords} = require('./index')
-let coordinates0 = '[-0.131049, 51.498568]'
+
+let {convertCoords, verifyCoordinatesLegitimate} = require('./index')
+const coordinatesStrReg = /((-*[1][0-9]{0,2}|0)(\.[0-9]{1,6})*),\s{0,2}((-*[1-9][0-9]{0,1}|0)(\.[0-9]{1,6})*)/g
+const coordinatesStrReg1 = /(-*180(\.[0-9]{1,6})*|17\d(\.[0-9]{1,6})*|[1-9]{1,2}(\.[0-9]{1,6})),\s{0,2}((-*[1-9][0-9]{0,1}|0)(\.[0-9]{1,6})*)/g
+
+const coordinatesStrReg2 = /([\-\+]?(0?\d{1,2}\.\d{1,5}|1[0-7]?\d{1}\.\d{1,5}|180\.0{1,5})),\s([\-\+]?([0-8]?\d{1}\.\d{1,5}|90\.0{1,5}))/g
+
+let x1 = '[-197.131049, 51.498568]'
+let x2 = '[-127.131049, 51.498568]'
+console.info('verifyCoordinatesLegitimate_______')
+console.log(verifyCoordinatesLegitimate(x1))
+console.log(verifyCoordinatesLegitimate(x2))
+
 let coordinates1 = '-0.131049, 51.498568'
 let coordinates2 = '[-0.131049, 51.498568],[-0.131049, 51.498568]'
 let coordinates3 = [-0.131049, 51.498568]
@@ -10,8 +21,8 @@ let coordinates6 = {
     "geometry": {"type": "Point", "coordinates": [-0.113049, 51.498568]},
     "properties": {"name": "point marker"}
 }
-debugger
-let m0 = convertCoords(coordinates0, 'bd09', 'wgs84')
+console.info('convertCoords_______')
+let m0 = convertCoords(x1, 'bd09', 'wgs84')
 let m1 = convertCoords(coordinates1, 'gcj02', 'wgs84')
 let m2 = convertCoords(coordinates2, 'gcj02', 'wgs84')
 let m3 = convertCoords(coordinates3, 'gcj02', 'wgs84')
