@@ -1,8 +1,18 @@
 {
   "name": "coordinates_convert",
-  "version": "1.0.0",
-  "keywords": ["coordinates", "convert", "transform"],
-  "description": "A utility library for helping convert coordinates from string like GeoJSON Array.Use Reg expression",
+  "version": "1.0.1",
+  "keywords": [
+    "coordinates",
+    "convert",
+    "transform",
+    "latitude",
+    "longitude",
+    "convert",
+    "wgs84",
+    "bd09",
+    "gcj02"
+  ],
+  "description": "A utility library for helping convert coordinates from string like GeoJSON Array.Use Regular Expression Matching",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
