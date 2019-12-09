@@ -28,21 +28,24 @@
     ```
     正则万岁！
 ## 源于coordtransform
-+ coordtransform2：https://www.npmjs.com/package/coordtransform2，http://wandergis.com/coordtransform/
+经纬度数据转换方法，源自于coordtransform
++ coordtransform npm地址：https://www.npmjs.com/package/coordtransform2，官网：http://wandergis.com/coordtransform/
 + 提供了百度、火星坐标(国测局gcj02坐标)、wgs84(天地图坐标)之间转换。
-    //百度经纬度坐标转国测局坐标
-   var bd09togcj02=coordtransform.bd09togcj02(116.404, 39.915);
-   //国测局坐标转百度经纬度坐标
-   var gcj02tobd09=coordtransform.gcj02tobd09(116.404, 39.915);
-   //wgs84转国测局坐标
-   var wgs84togcj02=coordtransform.wgs84togcj02(116.404, 39.915);
-   //国测局坐标转wgs84坐标
-   var gcj02towgs84=coordtransform.gcj02towgs84(116.404, 39.915);
+```javascript
+//百度经纬度坐标转国测局坐标
+var bd09togcj02=coordtransform.bd09togcj02(116.404, 39.915);
+//国测局坐标转百度经纬度坐标
+var gcj02tobd09=coordtransform.gcj02tobd09(116.404, 39.915);
+//wgs84转国测局坐标
+var wgs84togcj02=coordtransform.wgs84togcj02(116.404, 39.915);
+//国测局坐标转wgs84坐标
+var gcj02towgs84=coordtransform.gcj02towgs84(116.404, 39.915);
+```
 *注意*：百度坐标转wg84没有提供直接方法，需要先百度经纬度坐标转国测局坐标吗，再国测局坐标转wgs84坐标
 
 但是，遇到GeoJSON字符串转换，或者数组转换，去循环替换，方法可靠，但是代码量太多。
 
-个人觉得用正则表达式转换，代码上，最简洁。
+个人觉得用正则表达式转换，代码上，最简洁。所以，就有了此包
 ## 测试
 测试实例：
 ```javascript
