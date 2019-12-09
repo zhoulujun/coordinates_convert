@@ -1,13 +1,14 @@
 {
   "name": "coordinates_convert",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "keywords": [
     "coordinates",
+    "coords",
     "convert",
     "transform",
     "latitude",
     "longitude",
-    "convert",
+    "converter",
     "wgs84",
     "bd09",
     "gcj02"
