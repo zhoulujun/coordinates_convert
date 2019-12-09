@@ -12,7 +12,7 @@
     "bd09",
     "gcj02"
   ],
-  "description": "A utility library for helping convert coordinates from string like GeoJSON Array.Use Regular Expression Matching",
+  "description": "地理坐标转换库，任意类型经纬度数据集(GeoJSON、数组、字符串)实现WGS84、GCJ02、BD09互转。\n a utility library for helping convert coordinates from collection like GeoJSON or Array & ect.Use Regular Expression Matching，convert by coordinate-convert",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
