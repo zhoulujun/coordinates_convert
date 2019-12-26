@@ -52,14 +52,14 @@ function convertCoords (param, orginSystem = 'gcj02', targetSystem = 'wgs84', de
     let paramIsObject = typeof param === 'object'
     let coordinatesStr = paramIsObject ? JSON.stringify(param) : param
     decimal && coordsTransformer.setDecimal(decimal)
-    coordinatesStr.replace(coordinatesStrReg, (str, $1, $2, $3, $4, $5) => {
+    let resultStr = coordinatesStr.replace(coordinatesStrReg, (str, $1, $2, $3, $4, $5) => {
         // lat=$1 lng lat=$4
         // console.log($1, $4)
         let convetFun = coordsTransformer[orginSystem + 'to' + targetSystem].bind(coordsTransformer)
-        let coordinates = convetFun($1, $4)
+        let coordinates = convetFun($1 - 0, $4 - 0)
         return coordinates.join(',')
     })
-    return paramIsObject ? JSON.parse(coordinatesStr) : coordinatesStr
+    return paramIsObject ? JSON.parse(resultStr) : resultStr
 }
 
 module.exports = {convertCoords, coordinatesStrReg, verifyCoordinatesLegitimate}
